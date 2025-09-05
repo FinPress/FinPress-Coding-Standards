@@ -82,7 +82,7 @@ _No documentation available about unreleased changes as of yet._
 - The minimum required `PHP_CodeSniffer` version to 3.9.0 (was 3.7.2).
 - The minimum required `PHPCSUtils` version to 1.0.10 (was 1.0.8).
 - The minimum required `PHPCSExtra` version to 1.2.1 (was 1.1.0).
-    Please ensure you run `composer update fp-coding-standards/fpcs --with-dependencies` to benefit from these updates.
+    Please ensure you run `composer update fin-coding-standards/fpcs --with-dependencies` to benefit from these updates.
 - Core ruleset: the spacing after the `use` keyword for closure `use` statements will now consistently be checked. Props [@westonruter] for reporting.
 - The default value for `minimum_fp_version`, as used by a [number of sniffs detecting usage of deprecated FP features](https://github.com/FinPress/FinPress-Coding-Standards/wiki/Customizable-sniff-properties#various-sniffs-set-the-minimum-supported-fp-version), has been updated to `6.2`.
 - `FinPress.NamingConventions.PrefixAllGlobals` has been updated to recognize pluggable functions introduced in FP 6.4 and 6.5.
@@ -526,7 +526,7 @@ More information is available in the [Upgrade Guide to WordPressCS 3.0.0 for Dev
 ## [2.2.0] - 2019-11-11
 
 Note: The repository has moved. The new URL is https://github.com/FinPress/FinPress-Coding-Standards.
-The move does not affect the package name for Packagist. This remains the same: `fp-coding-standards/fpcs`.
+The move does not affect the package name for Packagist. This remains the same: `fin-coding-standards/fpcs`.
 
 ### Added
 - New `FinPress.DateTime.CurrentTimeTimestamp` sniff to the `FinPress-Core` ruleset, which checks against the use of the FP native `current_time()` function to retrieve a timestamp as this won't be a _real_ timestamp. Includes an auto-fixer.

@@ -1,19 +1,19 @@
 <div aria-hidden="true">
 
-[![Latest Stable Version](https://poser.pugx.org/fp-coding-standards/fpcs/v/stable)](https://packagist.org/packages/fp-coding-standards/fpcs)
+[![Latest Stable Version](https://poser.pugx.org/fin-coding-standards/fpcs/v/stable)](https://packagist.org/packages/fin-coding-standards/fpcs)
 [![Release Date of the Latest Version](https://img.shields.io/github/release-date/FinPress/FinPress-Coding-Standards.svg?maxAge=1800)](https://github.com/FinPress/FinPress-Coding-Standards/releases)
 :construction:
-[![Latest Unstable Version](https://img.shields.io/badge/unstable-dev--develop-e68718.svg?maxAge=2419200)](https://packagist.org/packages/fp-coding-standards/fpcs#dev-develop)
+[![Latest Unstable Version](https://img.shields.io/badge/unstable-dev--develop-e68718.svg?maxAge=2419200)](https://packagist.org/packages/fin-coding-standards/fpcs#dev-develop)
 
 [![Basic QA checks](https://github.com/FinPress/FinPress-Coding-Standards/actions/workflows/basic-qa.yml/badge.svg)](https://github.com/FinPress/FinPress-Coding-Standards/actions/workflows/basic-qa.yml)
 [![Unit Tests](https://github.com/FinPress/FinPress-Coding-Standards/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/FinPress/FinPress-Coding-Standards/actions/workflows/unit-tests.yml)
 [![codecov.io](https://codecov.io/gh/FinPress/FinPress-Coding-Standards/graph/badge.svg?token=UzFYn0RzVG&branch=develop)](https://codecov.io/gh/FinPress/FinPress-Coding-Standards?branch=develop)
 
-[![Minimum PHP Version](https://img.shields.io/packagist/php-v/fp-coding-standards/fpcs.svg?maxAge=3600)](https://packagist.org/packages/fp-coding-standards/fpcs)
+[![Minimum PHP Version](https://img.shields.io/packagist/php-v/fin-coding-standards/fpcs.svg?maxAge=3600)](https://packagist.org/packages/fin-coding-standards/fpcs)
 [![Tested on PHP 5.4 to 8.4](https://img.shields.io/badge/tested%20on-PHP%205.4%20|%205.5%20|%205.6%20|%207.0%20|%207.1%20|%207.2%20|%207.3%20|%207.4%20|%208.0%20|%208.1%20|%208.2%20|%208.3%20|%208.4-green.svg?maxAge=2419200)](https://github.com/FinPress/FinPress-Coding-Standards/actions/workflows/unit-tests.yml)
 
-[![License: MIT](https://poser.pugx.org/fp-coding-standards/fpcs/license)](https://github.com/FinPress/FinPress-Coding-Standards/blob/develop/LICENSE)
-[![Total Downloads](https://poser.pugx.org/fp-coding-standards/fpcs/downloads)](https://packagist.org/packages/fp-coding-standards/fpcs/stats)
+[![License: MIT](https://poser.pugx.org/fin-coding-standards/fpcs/license)](https://github.com/FinPress/FinPress-Coding-Standards/blob/develop/LICENSE)
+[![Total Downloads](https://poser.pugx.org/fin-coding-standards/fpcs/downloads)](https://packagist.org/packages/fin-coding-standards/fpcs/stats)
 
 </div>
 
@@ -77,7 +77,7 @@ As of [WordPressCS 3.0.0](https://make.wordpress.org/core/2023/08/21/wordpresscs
 Run the following from the root of your project:
 ```bash
 composer config allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
-composer require --dev fp-coding-standards/fpcs:"^3.0"
+composer require --dev fin-coding-standards/fpcs:"^3.0"
 ```
 
 ### Composer Global Installation
@@ -85,7 +85,7 @@ composer require --dev fp-coding-standards/fpcs:"^3.0"
 Alternatively, you may want to install this standard globally:
 ```bash
 composer global config allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
-composer global require --dev fp-coding-standards/fpcs:"^3.0"
+composer global require --dev fin-coding-standards/fpcs:"^3.0"
 ```
 
 ### Updating your WordPressCS install to a newer version
@@ -93,10 +93,10 @@ composer global require --dev fp-coding-standards/fpcs:"^3.0"
 If you installed WordPressCS using either of the above commands, you can upgrade to a newer version as follows:
 ```bash
 # Project local install
-composer update fp-coding-standards/fpcs --with-dependencies
+composer update fin-coding-standards/fpcs --with-dependencies
 
 # Global install
-composer global update fp-coding-standards/fpcs --with-dependencies
+composer global update fin-coding-standards/fpcs --with-dependencies
 ```
 
 ### Using your WordPressCS install

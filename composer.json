@@ -1,5 +1,5 @@
 {
-	"name": "fp-coding-standards/fpcs",
+	"name": "fin-coding-standards/fpcs",
 	"type": "phpcodesniffer-standard",
 	"description": "PHP_CodeSniffer rules (sniffs) to enforce FinPress coding conventions",
 	"keywords": [
