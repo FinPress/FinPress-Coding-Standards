@@ -13,20 +13,20 @@
 	forceCoversAnnotation="true">
 
 	<testsuites>
-		<testsuite name="WordPress">
-			<directory suffix="UnitTest.php">./WordPress/Tests/</directory>
+		<testsuite name="FinPress">
+			<directory suffix="UnitTest.php">./FinPress/Tests/</directory>
 		</testsuite>
 	</testsuites>
 
 	<filter>
 		<whitelist addUncoveredFilesFromWhitelist="true" processUncoveredFilesFromWhitelist="false">
-			<file>./WordPress/Sniff.php</file>
-			<file>./WordPress/AbstractArrayAssignmentRestrictionsSniff.php</file>
-			<file>./WordPress/AbstractClassRestrictionsSniff.php</file>
-			<file>./WordPress/AbstractFunctionParameterSniff.php</file>
-			<file>./WordPress/AbstractFunctionRestrictionsSniff.php</file>
-			<directory>./WordPress/Sniffs/</directory>
-			<directory>./WordPress/Helpers/</directory>
+			<file>./FinPress/Sniff.php</file>
+			<file>./FinPress/AbstractArrayAssignmentRestrictionsSniff.php</file>
+			<file>./FinPress/AbstractClassRestrictionsSniff.php</file>
+			<file>./FinPress/AbstractFunctionParameterSniff.php</file>
+			<file>./FinPress/AbstractFunctionRestrictionsSniff.php</file>
+			<directory>./FinPress/Sniffs/</directory>
+			<directory>./FinPress/Helpers/</directory>
 		</whitelist>
 	</filter>
 

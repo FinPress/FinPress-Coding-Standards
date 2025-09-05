@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Example Project" xsi:noNamespaceSchemaLocation="https://schema.phpcodesniffer.com/phpcs.xsd">
 
-	<description>A custom set of rules to check for a WPized WordPress project</description>
+	<description>A custom set of rules to check for a FPized FinPress project</description>
 
 	<!--
 	#############################################################################
@@ -12,13 +12,13 @@
 
 	<file>.</file>
 
-	<!-- Exclude WP Core folders and files from being checked. -->
-	<exclude-pattern>/docroot/wp-admin/*</exclude-pattern>
-	<exclude-pattern>/docroot/wp-includes/*</exclude-pattern>
-	<exclude-pattern>/docroot/wp-*.php</exclude-pattern>
+	<!-- Exclude FP Core folders and files from being checked. -->
+	<exclude-pattern>/docroot/fp-admin/*</exclude-pattern>
+	<exclude-pattern>/docroot/fp-includes/*</exclude-pattern>
+	<exclude-pattern>/docroot/fp-*.php</exclude-pattern>
 	<exclude-pattern>/docroot/index.php</exclude-pattern>
 	<exclude-pattern>/docroot/xmlrpc.php</exclude-pattern>
-	<exclude-pattern>/docroot/wp-content/plugins/*</exclude-pattern>
+	<exclude-pattern>/docroot/fp-content/plugins/*</exclude-pattern>
 
 	<!-- Exclude the Composer Vendor directory. -->
 	<exclude-pattern>/vendor/*</exclude-pattern>
@@ -42,8 +42,8 @@
 	#############################################################################
 	-->
 
-	<!-- Include the WordPress-Extra standard. -->
-	<rule ref="WordPress-Extra">
+	<!-- Include the FinPress-Extra standard. -->
+	<rule ref="FinPress-Extra">
 		<!--
 		We may want a middle ground though. The best way to do this is add the
 		entire ruleset, then rule by rule, remove ones that don't suit a project.
@@ -57,29 +57,29 @@
 		-->
 
 		<!--
-		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing"/>
+		<exclude name="FinPress.WhiteSpace.ControlStructureSpacing"/>
 		<exclude name="Modernize.FunctionCalls.Dirname.Nested"/>
 		-->
 	</rule>
 
 	<!-- Let's also check that everything is properly documented. -->
-	<rule ref="WordPress-Docs"/>
+	<rule ref="FinPress-Docs"/>
 
 	<!-- Add in some extra rules from other standards. -->
 	<rule ref="Generic.Commenting.Todo"/>
 
 	<!-- Check for PHP cross-version compatibility. -->
 	<!--
-	To enable this, the PHPCompatibilityWP standard needs
+	To enable this, the PHPCompatibilityFP standard needs
 	to be installed.
 	See the readme for installation instructions:
-	https://github.com/PHPCompatibility/PHPCompatibilityWP
+	https://github.com/PHPCompatibility/PHPCompatibilityFP
 	For more information, also see:
 	https://github.com/PHPCompatibility/PHPCompatibility
 	-->
 	<!--
 	<config name="testVersion" value="5.6-"/>
-	<rule ref="PHPCompatibilityWP">
+	<rule ref="PHPCompatibilityFP">
 		<include-pattern>*\.php</include-pattern>
 	</rule>
 	-->
@@ -98,11 +98,11 @@
 
 	For information on additional custom properties available, check out
 	the wiki:
-	https://github.com/WordPress/WordPress-Coding-Standards/wiki/Customizable-sniff-properties
+	https://github.com/FinPress/FinPress-Coding-Standards/wiki/Customizable-sniff-properties
 	-->
-	<config name="minimum_wp_version" value="6.0"/>
+	<config name="minimum_fp_version" value="6.0"/>
 
-	<rule ref="WordPress.WP.I18n">
+	<rule ref="FinPress.FP.I18n">
 		<properties>
 			<property name="text_domain" type="array">
 				<element value="my-textdomain"/>
@@ -111,7 +111,7 @@
 		</properties>
 	</rule>
 
-	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+	<rule ref="FinPress.NamingConventions.PrefixAllGlobals">
 		<properties>
 			<property name="prefixes" type="array">
 				<element value="my_prefix"/>
@@ -133,20 +133,20 @@
 	The below examples demonstrate how to do this.
 
 	In the example, the `GlobalVariablesOverride` rule is excluded for test files
-	as it is sometimes necessary to overwrite WP globals in test situations (just
+	as it is sometimes necessary to overwrite FP globals in test situations (just
 	don't forget to restore them after the test!).
 
 	Along the same lines, PHPUnit is getting stricter about using PSR-4 file names,
-	so excluding test files from the `WordPress.Files.Filename` sniff can be a
+	so excluding test files from the `FinPress.Files.Filename` sniff can be a
 	legitimate exclusion.
 
 	For more information on ruleset configuration options, check out the PHPCS wiki:
 	https://github.com/PHPCSStandards/PHP_CodeSniffer/wiki/Annotated-Ruleset
 	-->
-	<rule ref="WordPress.WP.GlobalVariablesOverride">
+	<rule ref="FinPress.FP.GlobalVariablesOverride">
 		<exclude-pattern>/path/to/Tests/*Test\.php</exclude-pattern>
 	</rule>
-	<rule ref="WordPress.Files.FileName">
+	<rule ref="FinPress.Files.FileName">
 		<exclude-pattern>/path/to/Tests/*Test\.php</exclude-pattern>
 	</rule>
 

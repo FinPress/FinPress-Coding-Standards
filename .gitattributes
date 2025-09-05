@@ -13,7 +13,7 @@
 /phpunit.xml.dist   export-ignore
 /.github            export-ignore
 /Tests              export-ignore
-/WordPress/Tests    export-ignore
+/FinPress/Tests    export-ignore
 
 #
 # Auto detect text files and perform LF normalization

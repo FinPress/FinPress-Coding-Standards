@@ -1,4 +1,4 @@
-Hi, thank you for your interest in contributing to the WordPress Coding Standards! We look forward to working with you.
+Hi, thank you for your interest in contributing to the FinPress Coding Standards! We look forward to working with you.
 
 # Reporting Bugs
 
@@ -12,7 +12,7 @@ Bug reports containing a minimal code sample which can be used to reproduce the 
 ## Upstream Issues
 
 Since WordPressCS employs many sniffs that are part of PHP_CodeSniffer itself or PHPCSExtra, sometimes an issue will be caused by a bug in PHPCS or PHPCSExtra and not in WordPressCS itself.
-If the error message in question doesn't come from a sniff whose name starts with `WordPress`, the issue is probably a bug in PHPCS or PHPCSExtra.
+If the error message in question doesn't come from a sniff whose name starts with `FinPress`, the issue is probably a bug in PHPCS or PHPCSExtra.
 
 * Bugs for sniffs starting with `Generic`, `PEAR`, `PSR1`, `PSR2`, `PSR12`, `Squiz` or `Zend` should be [reported to PHPCS](https://github.com/PHPCSStandards/PHP_CodeSniffer/issues).
 * Bugs for sniffs starting with `Modernize`, `NormalizedArrays` or `Universal` should be [reported to PHPCSExtra](https://github.com/PHPCSStandards/PHPCSExtra/issues).
@@ -33,18 +33,18 @@ Alternatively, if you have push access to this repo, create a feature branch pre
 When writing sniffs, always remember that any `public` sniff property can be overruled via a custom ruleset by the end-user.
 Only make a property `public` if that is the intended behavior.
 
-When you introduce new `public` sniff properties, or your sniff extends a class from which you inherit a `public` property, please don't forget to update the [public properties wiki page](https://github.com/WordPress/WordPress-Coding-Standards/wiki/Customizable-sniff-properties) with the relevant details once your PR has been merged into the `develop` branch.
+When you introduce new `public` sniff properties, or your sniff extends a class from which you inherit a `public` property, please don't forget to update the [public properties wiki page](https://github.com/FinPress/FinPress-Coding-Standards/wiki/Customizable-sniff-properties) with the relevant details once your PR has been merged into the `develop` branch.
 
 # Unit Testing
 
 ## Pre-requisites
-* WordPress-Coding-Standards
+* FinPress-Coding-Standards
 * PHP_CodeSniffer 3.13.0 or higher
 * PHPCSUtils 1.1.0 or higher
 * PHPCSExtra 1.4.0 or higher
 * PHPUnit 4.x - 9.x
 
-The WordPress Coding Standards use the `PHP_CodeSniffer` native unit test framework for unit testing the sniffs.
+The FinPress Coding Standards use the `PHP_CodeSniffer` native unit test framework for unit testing the sniffs.
 
 ## Getting ready to test
 
@@ -80,7 +80,7 @@ From the root of your WordPressCS install, run the unit tests like so:
 composer run-tests
 
 # Or if you want to use a globally installed version of PHPUnit:
-phpunit --filter WordPress /path/to/PHP_CodeSniffer/tests/AllTests.php
+phpunit --filter FinPress /path/to/PHP_CodeSniffer/tests/AllTests.php
 ```
 
 Expected output:
@@ -101,12 +101,12 @@ OK (57 tests, 0 assertions)
 
 ## Unit Testing conventions
 
-If you look inside the `WordPress/Tests` subdirectory, you'll see the structure mimics the `WordPress/Sniffs` subdirectory structure. For example, the `WordPress/Sniffs/PHP/POSIXFunctionsSniff.php` sniff has its unit test class defined in `WordPress/Tests/PHP/POSIXFunctionsUnitTest.php` which checks the `WordPress/Tests/PHP/POSIXFunctionsUnitTest.inc` test case file. See the file naming convention?
+If you look inside the `FinPress/Tests` subdirectory, you'll see the structure mimics the `FinPress/Sniffs` subdirectory structure. For example, the `FinPress/Sniffs/PHP/POSIXFunctionsSniff.php` sniff has its unit test class defined in `FinPress/Tests/PHP/POSIXFunctionsUnitTest.php` which checks the `FinPress/Tests/PHP/POSIXFunctionsUnitTest.inc` test case file. See the file naming convention?
 
 Lets take a look at what's inside `POSIXFunctionsUnitTest.php`:
 
 ```php
-namespace WordPressCS\WordPress\Tests\PHP;
+namespace WordPressCS\FinPress\Tests\PHP;
 
 use PHP_CodeSniffer\Tests\Standards\AbstractSniffUnitTest;
 
@@ -133,37 +133,37 @@ final class POSIXFunctionsUnitTest extends AbstractSniffUnitTest {
 }
 ```
 
-Also note the class name convention. The method `getErrorList()` MUST return an array of line numbers indicating errors (when running `phpcs`) found in `WordPress/Tests/PHP/POSIXFunctionsUnitTest.inc`. Similarly, the `getWarningList()` method must return an array of line numbers with the number of expected warnings.
+Also note the class name convention. The method `getErrorList()` MUST return an array of line numbers indicating errors (when running `phpcs`) found in `FinPress/Tests/PHP/POSIXFunctionsUnitTest.inc`. Similarly, the `getWarningList()` method must return an array of line numbers with the number of expected warnings.
 
 If you run the following from the root directory of your WordPressCS clone:
 
 ```sh
-$ "vendor/bin/phpcs" --standard=Wordpress -s ./WordPress/Tests/PHP/POSIXFunctionsUnitTest.inc --sniffs=WordPress.PHP.POSIXFunctions
+$ "vendor/bin/phpcs" --standard=Finpress -s ./FinPress/Tests/PHP/POSIXFunctionsUnitTest.inc --sniffs=FinPress.PHP.POSIXFunctions
 ...
 --------------------------------------------------------------------------------
 FOUND 7 ERRORS AFFECTING 7 LINES
 --------------------------------------------------------------------------------
  13 | ERROR | ereg() has been deprecated since PHP 5.3 and removed in PHP 7.0,
     |       | please use preg_match() instead.
-    |       | (WordPress.PHP.POSIXFunctions.ereg_ereg)
+    |       | (FinPress.PHP.POSIXFunctions.ereg_ereg)
  16 | ERROR | eregi() has been deprecated since PHP 5.3 and removed in PHP 7.0,
     |       | please use preg_match() instead.
-    |       | (WordPress.PHP.POSIXFunctions.ereg_eregi)
+    |       | (FinPress.PHP.POSIXFunctions.ereg_eregi)
  18 | ERROR | ereg_replace() has been deprecated since PHP 5.3 and removed in
     |       | PHP 7.0, please use preg_replace() instead.
-    |       | (WordPress.PHP.POSIXFunctions.ereg_replace_ereg_replace)
+    |       | (FinPress.PHP.POSIXFunctions.ereg_replace_ereg_replace)
  20 | ERROR | eregi_replace() has been deprecated since PHP 5.3 and removed in
     |       | PHP 7.0, please use preg_replace() instead.
-    |       | (WordPress.PHP.POSIXFunctions.ereg_replace_eregi_replace)
+    |       | (FinPress.PHP.POSIXFunctions.ereg_replace_eregi_replace)
  22 | ERROR | split() has been deprecated since PHP 5.3 and removed in PHP 7.0,
     |       | please use explode(), str_split() or preg_split() instead.
-    |       | (WordPress.PHP.POSIXFunctions.split_split)
+    |       | (FinPress.PHP.POSIXFunctions.split_split)
  24 | ERROR | spliti() has been deprecated since PHP 5.3 and removed in PHP
     |       | 7.0, please use explode(), str_split() or preg_split()
-    |       | instead. (WordPress.PHP.POSIXFunctions.split_spliti)
+    |       | instead. (FinPress.PHP.POSIXFunctions.split_spliti)
  26 | ERROR | sql_regcase() has been deprecated since PHP 5.3 and removed in
     |       | PHP 7.0, please use preg_match() instead.
-    |       | (WordPress.PHP.POSIXFunctions.ereg_sql_regcase)
+    |       | (FinPress.PHP.POSIXFunctions.ereg_sql_regcase)
 --------------------------------------------------------------------------------
 ...
 ```
@@ -173,4 +173,4 @@ The `--sniffs=...` directive limits the output to the sniff you are testing.
 
 ## Code Standards for this project
 
-The sniffs and test files - not test _case_ files! - for WordPressCS should be written such that they pass the `WordPress-Extra` and the `WordPress-Docs` code standards using the custom ruleset as found in `/.phpcs.xml.dist`.
+The sniffs and test files - not test _case_ files! - for WordPressCS should be written such that they pass the `FinPress-Extra` and the `FinPress-Docs` code standards using the custom ruleset as found in `/.phpcs.xml.dist`.

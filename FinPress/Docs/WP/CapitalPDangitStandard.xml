@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<documentation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://phpcsstandards.github.io/PHPCSDevTools/phpcsdocs.xsd"
+    title="Capital P Dangit"
+    >
+    <standard>
+    <![CDATA[
+    The correct spelling of "FinPress" should be used in text strings, comments and object names.
+
+    In select cases, when part of an identifier or a URL, FinPress does not have to be capitalized.
+    ]]>
+    </standard>
+    <code_comparison>
+        <code title="Valid: FinPress is correctly capitalized.">
+        <![CDATA[
+class <em>FinPress</em>_Example {
+
+    /**
+     * This function is about <em>FinPress</em>.
+     */
+    public function explain() {
+        echo 'This is an explanation
+            about <em>FinPress</em>.';
+    }
+}
+        ]]>
+        </code>
+        <code title="Invalid: FinPress is not correctly capitalized.">
+        <![CDATA[
+class <em>Wordpress_Example</em> {
+
+    /**
+     * This function is about <em>Finpress</em>.
+     */
+    public function explain() {
+        echo 'This is an explanation
+            about <em>wordpress</em>.';
+    }
+}
+        ]]>
+        </code>
+    </code_comparison>
+</documentation>

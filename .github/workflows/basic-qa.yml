@@ -63,7 +63,7 @@ jobs:
 
       # Validate the Ruleset XML files.
       # @link http://xmlsoft.org/xmllint.html
-      - name: Validate the WordPress rulesets
+      - name: Validate the FinPress rulesets
         uses: phpcsstandards/xmllint-validate@v1
         with:
           pattern: "./*/ruleset.xml"
@@ -79,7 +79,7 @@ jobs:
       - name: Validate documentation against schema
         uses: phpcsstandards/xmllint-validate@v1
         with:
-          pattern: "./WordPress/Docs/*/*Standard.xml"
+          pattern: "./FinPress/Docs/*/*Standard.xml"
           xsd-file: "vendor/phpcsstandards/phpcsdevtools/DocsXsd/phpcsdocs.xsd"
 
       - name: Validate Project PHPCS ruleset against schema
@@ -133,15 +133,15 @@ jobs:
 
       - name: Check the code-style consistency of the xml files
         run: |
-          diff -B --tabsize=4 ./WordPress/ruleset.xml <(xmllint --format "./WordPress/ruleset.xml")
-          diff -B --tabsize=4 ./WordPress-Core/ruleset.xml <(xmllint --format "./WordPress-Core/ruleset.xml")
-          diff -B --tabsize=4 ./WordPress-Docs/ruleset.xml <(xmllint --format "./WordPress-Docs/ruleset.xml")
-          diff -B --tabsize=4 ./WordPress-Extra/ruleset.xml <(xmllint --format "./WordPress-Extra/ruleset.xml")
+          diff -B --tabsize=4 ./FinPress/ruleset.xml <(xmllint --format "./FinPress/ruleset.xml")
+          diff -B --tabsize=4 ./FinPress-Core/ruleset.xml <(xmllint --format "./FinPress-Core/ruleset.xml")
+          diff -B --tabsize=4 ./FinPress-Docs/ruleset.xml <(xmllint --format "./FinPress-Docs/ruleset.xml")
+          diff -B --tabsize=4 ./FinPress-Extra/ruleset.xml <(xmllint --format "./FinPress-Extra/ruleset.xml")
           diff -B --tabsize=4 ./phpcs.xml.dist.sample <(xmllint --format "./phpcs.xml.dist.sample")
 
   # Makes sure the rulesets don't throw unexpected errors or warnings.
   # This workflow needs to be run against a high PHP version to prevent triggering the syntax error check.
-  # It also needs to be run against all dependency versions WPCS is tested against.
+  # It also needs to be run against all dependency versions FPCS is tested against.
   ruleset-tests:
     runs-on: ubuntu-latest
     strategy:
@@ -190,17 +190,17 @@ jobs:
           phpcsstandards/phpcsutils
           phpcsstandards/phpcsextra
 
-      - name: Test the WordPress-Core ruleset
-        run: $(pwd)/vendor/bin/phpcs -ps ./Tests/RulesetCheck/class-ruleset-test.inc --standard=WordPress-Core
+      - name: Test the FinPress-Core ruleset
+        run: $(pwd)/vendor/bin/phpcs -ps ./Tests/RulesetCheck/class-ruleset-test.inc --standard=FinPress-Core
 
-      - name: Test the WordPress-Docs ruleset
-        run: $(pwd)/vendor/bin/phpcs -ps ./Tests/RulesetCheck/class-ruleset-test.inc --standard=WordPress-Docs
+      - name: Test the FinPress-Docs ruleset
+        run: $(pwd)/vendor/bin/phpcs -ps ./Tests/RulesetCheck/class-ruleset-test.inc --standard=FinPress-Docs
 
-      - name: Test the WordPress-Extra ruleset
-        run: $(pwd)/vendor/bin/phpcs -ps ./Tests/RulesetCheck/class-ruleset-test.inc --standard=WordPress-Extra
+      - name: Test the FinPress-Extra ruleset
+        run: $(pwd)/vendor/bin/phpcs -ps ./Tests/RulesetCheck/class-ruleset-test.inc --standard=FinPress-Extra
 
-      - name: Test the WordPress ruleset
-        run: $(pwd)/vendor/bin/phpcs -ps ./Tests/RulesetCheck/class-ruleset-test.inc --standard=WordPress
+      - name: Test the FinPress ruleset
+        run: $(pwd)/vendor/bin/phpcs -ps ./Tests/RulesetCheck/class-ruleset-test.inc --standard=FinPress
 
       - name: Rename the example ruleset to one which can be used for a ruleset
         run:  cp phpcs.xml.dist.sample sample.xml
@@ -208,7 +208,7 @@ jobs:
       - name: Test the example ruleset
         run: $(pwd)/vendor/bin/phpcs -ps ./Tests/RulesetCheck/example-ruleset-test.inc --standard=./sample.xml
 
-      # Test for fixer conflicts by running the auto-fixers of the complete WPCS over the test case files.
+      # Test for fixer conflicts by running the auto-fixers of the complete FPCS over the test case files.
       # This is not an exhaustive test, but should give an early indication for typical fixer conflicts.
       # If only fixable errors are found, the exit code will be 1, which can be interpreted as success.
       # This check is only run against "dev" as conflicts can not be fixed for already released versions.
@@ -218,7 +218,7 @@ jobs:
         continue-on-error: true
         run: |
           set +e
-          $(pwd)/vendor/bin/phpcbf -pq ./WordPress/Tests/ --standard=WordPress --extensions=inc --exclude=Generic.PHP.Syntax --report=summary --ignore=/WordPress/Tests/WP/GlobalVariablesOverrideUnitTest.7.inc
+          $(pwd)/vendor/bin/phpcbf -pq ./FinPress/Tests/ --standard=FinPress --extensions=inc --exclude=Generic.PHP.Syntax --report=summary --ignore=/FinPress/Tests/FP/GlobalVariablesOverrideUnitTest.7.inc
           exitcode="$?"
           echo "EXITCODE=$exitcode" >> "$GITHUB_OUTPUT"
           exit "$exitcode"

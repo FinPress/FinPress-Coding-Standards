@@ -1,6 +1,6 @@
 <?php
 /**
- * WordPress Coding Standard.
+ * FinPress Coding Standard.
  *
  * Bootstrap file for running the tests.
  *
@@ -9,8 +9,8 @@
  * - Load the Composer autoload file.
  * - Automatically limit the testing to the WordPressCS tests.
  *
- * @package WPCS\WordPressCodingStandards
- * @link    https://github.com/WordPress/WordPress-Coding-Standards
+ * @package FPCS\WordPressCodingStandards
+ * @link    https://github.com/FinPress/FinPress-Coding-Standards
  * @license https://opensource.org/licenses/MIT MIT
  */
 
@@ -60,8 +60,8 @@ for that PHPCS install.
 /*
  * Set the PHPCS_IGNORE_TEST environment variable to ignore tests from other standards.
  */
-$wpcsStandards = array(
-	'WordPress' => true,
+$fpcsStandards = array(
+	'FinPress' => true,
 );
 
 $allStandards   = PHP_CodeSniffer\Util\Standards::getInstalledStandards();
@@ -69,7 +69,7 @@ $allStandards[] = 'Generic';
 
 $standardsToIgnore = array();
 foreach ( $allStandards as $standard ) {
-	if ( isset( $wpcsStandards[ $standard ] ) === true ) {
+	if ( isset( $fpcsStandards[ $standard ] ) === true ) {
 		continue;
 	}
 
@@ -78,7 +78,7 @@ foreach ( $allStandards as $standard ) {
 
 $standardsToIgnoreString = implode( ',', $standardsToIgnore );
 
-// phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.runtime_configuration_putenv -- This is not production, but test code.
+// phpcs:ignore FinPress.PHP.DiscouragedPHPFunctions.runtime_configuration_putenv -- This is not production, but test code.
 putenv( "PHPCS_IGNORE_TESTS={$standardsToIgnoreString}" );
 
 // Clean up.

@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="FinPress-Docs" xsi:noNamespaceSchemaLocation="https://schema.phpcodesniffer.com/phpcs.xsd">
+
+	<description>FinPress Coding Standards for Inline Documentation and Comments</description>
+
+	<!--
+		Handbook: PHP Documentation Standards
+		Ref: https://developer.wordpress.org/coding-standards/inline-documentation-standards/php/
+	-->
+
+	<rule ref="Squiz.Commenting">
+		<!-- Excluded to allow /* translators: ... */ comments -->
+		<exclude name="Squiz.Commenting.BlockComment.SingleLine"/>
+		<!-- Sniff seems to require indenting with spaces -->
+		<exclude name="Squiz.Commenting.BlockComment.FirstLineIndent"/>
+		<!-- Sniff seems to require indenting with spaces -->
+		<exclude name="Squiz.Commenting.BlockComment.LineIndent"/>
+		<!-- Sniff seems to require indenting with spaces -->
+		<exclude name="Squiz.Commenting.BlockComment.LastLineIndent"/>
+		<!-- FP requires /** for require() et al. See https://github.com/squizlabs/PHP_CodeSniffer/pull/581 -->
+		<exclude name="Squiz.Commenting.BlockComment.WrongStart"/>
+		<!-- FP handbook doesn't clarify one way or another, so ignore -->
+		<exclude name="Squiz.Commenting.BlockComment.NoEmptyLineAfter"/>
+
+		<!-- FP prefers indicating @since, @package, @subpackage etc in class comments -->
+		<exclude name="Squiz.Commenting.ClassComment.TagNotAllowed"/>
+
+		<!-- FP doesn't require //end ... for classes and functions -->
+		<exclude name="Squiz.Commenting.ClosingDeclarationComment.Missing"/>
+
+		<!-- Excluded to allow param documentation for arrays  -->
+		<exclude name="Squiz.Commenting.DocCommentAlignment.SpaceAfterStar"/>
+
+		<!-- FP doesn't require a @author value for Squiz -->
+		<exclude name="Squiz.Commenting.FileComment.IncorrectAuthor"/>
+		<!-- FP doesn't require a @copyright value for Squiz -->
+		<exclude name="Squiz.Commenting.FileComment.IncorrectCopyright"/>
+		<!-- FP doesn't require @author tags -->
+		<exclude name="Squiz.Commenting.FileComment.MissingAuthorTag"/>
+		<!-- FP doesn't require @subpackage tags -->
+		<exclude name="Squiz.Commenting.FileComment.MissingSubpackageTag"/>
+		<!-- FP doesn't require @copyright tags -->
+		<exclude name="Squiz.Commenting.FileComment.MissingCopyrightTag"/>
+		<!-- FP has a different preferred order of tags -->
+		<exclude name="Squiz.Commenting.FileComment.PackageTagOrder"/>
+		<!-- FP has a different preferred order of tags -->
+		<exclude name="Squiz.Commenting.FileComment.SubpackageTagOrder"/>
+		<!-- FP has a different preferred order of tags -->
+		<exclude name="Squiz.Commenting.FileComment.AuthorTagOrder"/>
+		<!-- FP has a different preferred order of tags -->
+		<exclude name="Squiz.Commenting.FileComment.CopyrightTagOrder"/>
+
+		<!-- FP prefers int and bool instead of integer and boolean -->
+		<exclude name="Squiz.Commenting.FunctionComment.IncorrectParamVarName"/>
+		<!-- FP prefers int and bool instead of integer and boolean -->
+		<exclude name="Squiz.Commenting.FunctionComment.InvalidReturn"/>
+		<!-- FP prefers indicating a @return null for early returns -->
+		<exclude name="Squiz.Commenting.FunctionComment.InvalidReturnNotVoid"/>
+		<!-- FP states not all functions require @return -->
+		<exclude name="Squiz.Commenting.FunctionComment.MissingReturn"/>
+		<!-- Excluded to allow param documentation for arrays  -->
+		<exclude name="Squiz.Commenting.FunctionComment.ParamCommentNotCapital"/>
+		<!-- Excluded to allow param documentation for arrays  -->
+		<exclude name="Squiz.Commenting.FunctionComment.SpacingAfterParamName"/>
+		<!-- It is too early for PHP7 features to be required -->
+		<exclude name="Squiz.Commenting.FunctionComment.ScalarTypeHintMissing"/>
+		<!-- FP doesn't require type hints -->
+		<exclude name="Squiz.Commenting.FunctionComment.TypeHintMissing"/>
+
+		<!-- Exclude to allow duplicate hooks to be documented -->
+		<exclude name="Squiz.Commenting.InlineComment.DocBlock"/>
+		<!-- Excluded to allow /* translators: ... */ comments -->
+		<exclude name="Squiz.Commenting.InlineComment.NotCapital"/>
+		<!-- FP handbook doesn't clarify one way or another, so ignore -->
+		<exclude name="Squiz.Commenting.InlineComment.SpacingAfter"/>
+
+		<!-- Not in Inline Docs standard, and a code smell -->
+		<exclude name="Squiz.Commenting.LongConditionClosingComment"/>
+
+		<!-- Not in Inline Docs standard, and needed to bypass FPCS checks -->
+		<exclude name="Squiz.Commenting.PostStatementComment"/>
+
+		<!-- FP prefers int and bool instead of integer and boolean -->
+		<exclude name="Squiz.Commenting.VariableComment.IncorrectVarType"/>
+		<!-- FP demands a @since tag for class variables -->
+		<exclude name="Squiz.Commenting.VariableComment.TagNotAllowed"/>
+		<!-- FP prefers @since first -->
+		<exclude name="Squiz.Commenting.VariableComment.VarOrder"/>
+	</rule>
+
+	<rule ref="Generic.Commenting.DocComment">
+		<!-- FP has different alignment of tag values -->
+		<exclude name="Generic.Commenting.DocComment.TagValueIndent"/>
+		<!-- FP has a different preferred order of tags -->
+		<exclude name="Generic.Commenting.DocComment.ParamNotFirst"/>
+		<!-- Excluded to allow param documentation for arrays  -->
+		<exclude name="Generic.Commenting.DocComment.ParamGroup"/>
+		<!-- FP prefers no empty line between @param tags and @return -->
+		<exclude name="Generic.Commenting.DocComment.NonParamGroup"/>
+		<!-- Excluded to allow param documentation for arrays  -->
+		<exclude name="Generic.Commenting.DocComment.TagsNotGrouped"/>
+		<!-- Exclude to allow duplicate hooks to be documented -->
+		<exclude name="Generic.Commenting.DocComment.ContentAfterOpen"/>
+		<!-- Exclude to allow duplicate hooks to be documented -->
+		<exclude name="Generic.Commenting.DocComment.SpacingBeforeShort"/>
+		<!-- Exclude to allow duplicate hooks to be documented -->
+		<exclude name="Generic.Commenting.DocComment.ContentBeforeClose"/>
+	</rule>
+</ruleset>

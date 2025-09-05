@@ -12,10 +12,10 @@ coverage:
         target: auto
         threshold: 1%
         paths:
-          - "WordPress"
+          - "FinPress"
     patch: off
 
 ignore:
-  - "WordPress/Tests"
+  - "FinPress/Tests"
 
 comment: false

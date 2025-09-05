@@ -10,7 +10,7 @@
  * - Every WordPressCS native sniff is triggered.
  * - Every WordPressCS + PHPCS sniff within the Core ruleset is triggered.
  *
- * @package WPCS\WordPressCodingStandards
+ * @package FPCS\WordPressCodingStandards
  */
 
 echo 'Hello world';
@@ -73,10 +73,10 @@ class Ruleset_Test {
 		$e = apply_filter( 'filter_name', $d, $c );
 
 		if ( $a == $b ) { // phpcs:ignore Universal.Operators.StrictComparisons
-			$f = isset( $_GET['nonce'] ) ? 1 : 2; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$f = isset( $_GET['nonce'] ) ? 1 : 2; // phpcs:ignore FinPress.Security.NonceVerification.Recommended
 		}
 
-		// phpcs:ignore Squiz.PHP.Eval,WordPress.PHP.NoSilencedErrors
+		// phpcs:ignore Squiz.PHP.Eval,FinPress.PHP.NoSilencedErrors
 		$g = @eval( 'return true;' );
 
 		switch ( $param_a ) {

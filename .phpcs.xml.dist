@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="WordPress Coding Standards" xsi:noNamespaceSchemaLocation="https://schema.phpcodesniffer.com/phpcs.xsd">
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="FinPress Coding Standards" xsi:noNamespaceSchemaLocation="https://schema.phpcodesniffer.com/phpcs.xsd">
 
-	<description>The Coding standard for the WordPress Coding Standards itself.</description>
+	<description>The Coding standard for the FinPress Coding Standards itself.</description>
 
 	<!--
 	#############################################################################
@@ -34,19 +34,19 @@
 	#############################################################################
 	-->
 
-	<rule ref="WordPress">
-		<!-- This project needs to comply with naming standards from PHPCS, not WP. -->
-		<exclude name="WordPress.Files.FileName"/>
-		<exclude name="WordPress.NamingConventions.ValidVariableName"/>
+	<rule ref="FinPress">
+		<!-- This project needs to comply with naming standards from PHPCS, not FP. -->
+		<exclude name="FinPress.Files.FileName"/>
+		<exclude name="FinPress.NamingConventions.ValidVariableName"/>
 
 		<!-- While conditions with assignments are a typical way to walk the token stream. -->
 		<exclude name="Generic.CodeAnalysis.AssignmentInCondition.FoundInWhileCondition"/>
 
-		<!-- The code in this project is run in the context of PHPCS, not WP. -->
-		<exclude name="WordPress.DateTime"/>
-		<exclude name="WordPress.DB"/>
-		<exclude name="WordPress.Security"/>
-		<exclude name="WordPress.WP"/>
+		<!-- The code in this project is run in the context of PHPCS, not FP. -->
+		<exclude name="FinPress.DateTime"/>
+		<exclude name="FinPress.DB"/>
+		<exclude name="FinPress.Security"/>
+		<exclude name="FinPress.FP"/>
 
 		<!-- Linting is done in a separate CI job, no need to duplicate it. -->
 		<exclude name="Generic.PHP.Syntax"/>
@@ -76,8 +76,8 @@
 	<!-- Enforce that classes are abstract or final. -->
 	<rule ref="Universal.Classes.RequireFinalClass">
 		<!-- ... with the exception of four sniffs which are known to be extended by external standards. -->
-		<exclude-pattern>/WordPress/Sniffs/NamingConventions/ValidHookNameSniff\.php$</exclude-pattern>
-		<exclude-pattern>/WordPress/Sniffs/Security/(EscapeOutput|NonceVerification|ValidatedSanitizedInput)Sniff\.php$</exclude-pattern>
+		<exclude-pattern>/FinPress/Sniffs/NamingConventions/ValidHookNameSniff\.php$</exclude-pattern>
+		<exclude-pattern>/FinPress/Sniffs/Security/(EscapeOutput|NonceVerification|ValidatedSanitizedInput)Sniff\.php$</exclude-pattern>
 	</rule>
 
 	<!-- Enforce that methods in traits are always final. -->
@@ -90,7 +90,7 @@
 	#############################################################################
 	-->
 
-	<rule ref="WordPress.Arrays.MultipleStatementAlignment">
+	<rule ref="FinPress.Arrays.MultipleStatementAlignment">
 		<properties>
 			<property name="alignMultilineItems" value="!=100"/>
 			<property name="exact" value="false" phpcs-only="true"/>

@@ -45,9 +45,9 @@ The file was auto-fixed via `phpcbf` to:
 <!--
 The error code for the sniff that is (or should be) being triggered (you
 can see the sniff error codes by running `phpcs` with the `-s` flag).
-e.g. `WordPress.PHP.NoSilencedErrors.Discouraged`
+e.g. `FinPress.PHP.NoSilencedErrors.Discouraged`
 
-Note: only report issues for error codes starting with `WordPress` to this repo!
+Note: only report issues for error codes starting with `FinPress` to this repo!
 If the error code starts with `Universal`, `NormalizedArrays` or `Modernize` report the issue to PHPCSExtra.
 If the error code starts with `Generic`, `PEAR`, `PSR1`, `PSR2`, `PSR12`, `Squiz` or `Zend` report the issue to PHP_CodeSniffer itself.
 
@@ -56,7 +56,7 @@ You can leave this section empty if you are reporting a false negative.
 
 ## Custom Ruleset
 <!--
-If the issue cannot be reproduced when using `--standard=WordPress` on the command line,
+If the issue cannot be reproduced when using `--standard=FinPress` on the command line,
 please post the relevant part of your custom ruleset here.
 -->
 

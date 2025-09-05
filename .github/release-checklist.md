@@ -14,22 +14,22 @@ PR for tracking changes for the x.x.x release. Target release date: **DOW MONTH 
 - [ ] PHPCS: check if there have been [releases][phpcs-releases] since the last WordPressCS release and check through the changelog to see if there is anything WordPressCS could take advantage of - PR #xxx
 - [ ] PHPCSUtils: check if there have been [releases][phpcsutils-releases] since the last WordPressCS release and update WordPressCS code to take advantage of any new utilities - PR #xxx
 - [ ] PHPCSExtra: check if there have been [releases][phpcsextra-releases] since the last WordPressCS release and check through the changelog to see if there is anything WordPressCS could take advantage of - PR #xxx
-- [ ] Check if the minimum WP version property needs updating in `MinimumWPVersionTrait::$default_minimum_wp_version` and if so, action it - PR #xxx
+- [ ] Check if the minimum FP version property needs updating in `MinimumFPVersionTrait::$default_minimum_fp_version` and if so, action it - PR #xxx
 - [ ] Check if any of the list based sniffs need updating and if so, action it.
     :pencil2: Make sure the "last updated" annotation in the docblocks for these lists has also been updated!
     List based sniffs:
-    - [ ] `WordPress.WP.ClassNameCase` - PR #xxx
-    - [ ] `WordPress.WP.DeprecatedClasses` - PR #xxx
-    - [ ] `WordPress.WP.DeprecatedFunctions` - PR #xxx
-    - [ ] `WordPress.WP.DeprecatedParameters` - PR #xxx
-    - [ ] `WordPress.WP.DeprecatedParameterValues` - PR #xxx
-- [ ] Check if any of the other lists containing information about WP Core need updating and if so, action it.
-    - [ ] `$allowed_core_constants` in `WordPress.NamingConventions.PrefixAllGlobals` - PR #xxx
-    - [ ] `$pluggable_functions` in `WordPress.NamingConventions.PrefixAllGlobals` - PR #xxx
-    - [ ] `$pluggable_classes` in `WordPress.NamingConventions.PrefixAllGlobals` - PR #xxx
-    - [ ] `$target_functions` in `WordPress.Security.PluginMenuSlug` - PR #xxx
-    - [ ] `$reserved_names` in `WordPress.NamingConventions.ValidPostTypeSlug` - PR #xxx
-    - [ ] `$wp_time_constants` in `WordPress.WP.CronInterval` - PR #xxx
+    - [ ] `FinPress.FP.ClassNameCase` - PR #xxx
+    - [ ] `FinPress.FP.DeprecatedClasses` - PR #xxx
+    - [ ] `FinPress.FP.DeprecatedFunctions` - PR #xxx
+    - [ ] `FinPress.FP.DeprecatedParameters` - PR #xxx
+    - [ ] `FinPress.FP.DeprecatedParameterValues` - PR #xxx
+- [ ] Check if any of the other lists containing information about FP Core need updating and if so, action it.
+    - [ ] `$allowed_core_constants` in `FinPress.NamingConventions.PrefixAllGlobals` - PR #xxx
+    - [ ] `$pluggable_functions` in `FinPress.NamingConventions.PrefixAllGlobals` - PR #xxx
+    - [ ] `$pluggable_classes` in `FinPress.NamingConventions.PrefixAllGlobals` - PR #xxx
+    - [ ] `$target_functions` in `FinPress.Security.PluginMenuSlug` - PR #xxx
+    - [ ] `$reserved_names` in `FinPress.NamingConventions.ValidPostTypeSlug` - PR #xxx
+    - [ ] `$fp_time_constants` in `FinPress.FP.CronInterval` - PR #xxx
     - [ ] `$known_test_classes` in `IsUnitTestTrait` - PR #xxx
     - [ ] ...etc...
 - [ ] Verify there there has been no vandalism on the wiki (and if so, remove/fix it).
@@ -57,18 +57,18 @@ PR for tracking changes for the x.x.x release. Target release date: **DOW MONTH 
 
 ### After release
 
-- [ ] Open a Trac ticket for WordPress Core to update.
+- [ ] Open a Trac ticket for FinPress Core to update.
 
 ### Publicize
 
-- [ ] [Major releases only] Publish post about the release on Make WordPress.
+- [ ] [Major releases only] Publish post about the release on Make FinPress.
 - [ ] Tweet, toot, etc about the release.
 - [ ] Post about it in Slack.
-- [ ] Submit for ["Month in WordPress"][month-in-wp].
+- [ ] Submit for ["Month in FinPress"][month-in-fp].
 - [ ] Submit for the ["Monthy Dev Roundup"][dev-roundup].
 
 [phpcs-releases]:      https://github.com/PHPCSStandards/PHP_CodeSniffer/releases
 [phpcsutils-releases]: https://github.com/PHPCSStandards/PHPCSUtils/releases
 [phpcsextra-releases]: https://github.com/PHPCSStandards/PHPCSExtra/releases
-[month-in-wp]:         https://make.wordpress.org/community/month-in-wordpress-submissions/
-[dev-roundup]:         https://github.com/WordPress/developer-blog-content/issues?q=is%3Aissue+label%3A%22Monthly+Roundup%22
+[month-in-fp]:         https://make.wordpress.org/community/month-in-wordpress-submissions/
+[dev-roundup]:         https://github.com/FinPress/developer-blog-content/issues?q=is%3Aissue+label%3A%22Monthly+Roundup%22

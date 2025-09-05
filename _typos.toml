@@ -1,9 +1,9 @@
 [files]
 extend-exclude = [
-    "WordPress/Tests/*/*.inc",
-    "WordPress/Tests/*/*.fixed",
-    "WordPress/Tests/*/*.css",
-    "WordPress/Tests/*/*.js",
+    "FinPress/Tests/*/*.inc",
+    "FinPress/Tests/*/*.fixed",
+    "FinPress/Tests/*/*.css",
+    "FinPress/Tests/*/*.js",
 ]
 ignore-hidden = true
 

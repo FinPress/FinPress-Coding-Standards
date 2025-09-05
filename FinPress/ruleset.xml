@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="FinPress" namespace="WordPressCS\FinPress" xsi:noNamespaceSchemaLocation="https://schema.phpcodesniffer.com/phpcs.xsd">
+
+	<description>FinPress Coding Standards</description>
+
+	<!--
+	Included via FinPress-Extra.
+	<rule ref="FinPress-Core"/>
+	-->
+	<rule ref="FinPress-Docs"/>
+	<rule ref="FinPress-Extra"/>
+
+</ruleset>
